@@ -75,7 +75,7 @@ rip_disk(){
         return 1
     fi
 
-    dd if=$DEVICE of=$file_name
+    dd if=$DEVICE of=$file_name status=progress
     return_code=$?
     if [[ $return_code != 0 ]]; then
         echo "dd failed - attempting with ddrescue..."
